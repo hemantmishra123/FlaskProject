@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ConnectTothe World</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <style>
+     .bg-nav{
+         background-color: black;
+     }
+
+     
+  @media screen and (max-width: 995px) {
+
+.parent {
+  background: white; /* The width is 100%, when the viewport is 800px or smaller */
+  margin-top: auto;
+  margin-left: 0px;
+  max-width: fit-content;
+}
+}
+
+
+     .container{
+      display: block;   
+       background-image: url("https://images.unsplash.com/photo-1594312915251-48db9280c8f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGVkdWNhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+         }
+        .parent{
+          background: white;
+        }
+      .myfont{
+         font-size: 72px;
+         background: linear-gradient(270deg,#3f5ebf,#fc466b);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+      }
+      .lg-nav{
+        background: #e52d27;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      }
+      .part2{
+        background: #969899;
+        opacity: 0.6;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        height:39px;
+      }
+      .parent{
+         margin-top: 118px;
+         width:450px;
+      }
+      .child{
+        margin-bottom: 30px;
+
+      }
+  </style>
+
+  <body class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+      <a style="color:white" class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a style ="color:white" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    
+    <div class ="content">
+        <div class = "part">
+          <h1 class ="myfont"></h1>
+        </div>
+        <div class = "information">
+          <div class = "part1">
+          </div>
+          <div class="parent">
+            <div class ="child">
+              <h3 >classes Name is here</h3>
+           </div>
+           {% for item in data  %}
+           <div class ="address myfont">
+              <h4>ClassName : {{item.classname}}</h4>
+              </div>  
+          <div class="part2 ">
+            <div class ="singup-student">
+                <a href="/classupdate/{{item.id}}"><button style="color:white" type="button" class="btn bg-nav">Update</button></a>
+            
+  
+              </div>
+              <div class =" signup-teacher">
+                <a href="/classdelete/{{item.id}}"> <button style="color:white" type="button" class="btn bg-nav">Delete</button>
+              </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
